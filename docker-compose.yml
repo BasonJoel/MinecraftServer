@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  minecraft:
+    image: 05jchambers/legendary-minecraft-geyser-floodgate:latest
+    container_name: minecraft
+    hostname: minecraft
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/lib/docker/volumes/minecraft/_data:/minecraft
+    ports:
+      - 25575:25575
+      - 25565:25565
+      - 19132:19132/udp
+      - 19132:19132
+    environment:
+      - TZ=UTC
